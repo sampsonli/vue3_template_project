@@ -1,8 +1,13 @@
 <template>
-<div class="demo-page">
-  demo page13333-{{model.num}}
-  <div class="btn" @click="model.addNum">add</div>
-</div>
+  <div class="demo-page">
+    demo page13333-{{ model.num }}
+    <div
+      class="btn"
+      @click="model.addNum"
+    >
+      add
+    </div>
+  </div>
 </template>
 
 <script setup>

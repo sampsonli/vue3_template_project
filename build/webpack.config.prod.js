@@ -6,6 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const vendorManifest = require('../public/dll/vendors-manifest');
 const bundleConfig = require('../public/dll/bundle-config');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer');
 module.exports = {
     mode: "production",
     entry: {
@@ -86,6 +87,9 @@ module.exports = {
             inject: true, // 是否将js放在body的末尾
             // favicon: path.join(ctxPath, 'static/favicon.ico'), // 自动把根目录下的favicon.ico图片加入html
             dllName: bundleConfig.vendors.js,
+        }),
+        new BundleAnalyzerPlugin({
+            analyzerMode: process.env.ANALYSE ? 'server' : 'disabled',
         }),
     ],
     optimization: {

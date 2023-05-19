@@ -6,4 +6,4 @@ class DemoModel extends Model {
         this.num += 22;
     }
 }
-export default DemoModel
+export default DemoModel;
