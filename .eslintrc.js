@@ -1,16 +1,19 @@
 module.exports = {
   root: true,
   env: {
-    node: true
+    node: true,
+    browser: true,
+    // 解决 defineProps and defineEmits generate no-undef warnings
+    'vue/setup-compiler-macros': true,
   },
   extends: [
-    'eslint:recommended',
     'plugin:vue/vue3-essential',
     'plugin:vue/vue3-recommended',
+    'eslint:recommended',
   ],
   parserOptions: {
     ecmaVersion: 2020,
-    parser: '@babel/eslint-parser'
+    parser: '@babel/eslint-parser',
   },
   parser: 'vue-eslint-parser',
   rules: {

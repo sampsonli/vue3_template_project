@@ -3,7 +3,7 @@ import {define, Model} from "mtor-vue";
 class DemoModel extends Model {
     num = 1;
     addNum() {
-        this.num += 22;
+        this.num += 1;
     }
 }
 export default DemoModel;

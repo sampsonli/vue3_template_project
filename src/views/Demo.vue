@@ -1,6 +1,6 @@
 <template>
   <div class="demo-page">
-    demo page13333-{{ model.num }}
+    demo page-{{ model.num }}
     <div
       class="btn"
       @click="model.addNum"
