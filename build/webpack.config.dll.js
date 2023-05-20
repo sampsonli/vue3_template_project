@@ -8,7 +8,6 @@ module.exports = {
     entry: {
         vendors: ['vue', 'dayjs', 'vue-router',
             'axios',
-            'regenerator-runtime/runtime',
         ],
     },
 

@@ -28,11 +28,13 @@ module.exports = {
         rules: [
             {
                 // .js .jsx用babel解析
-                test: /\.[tj]sx?$/,
+                test: /\.[tj]s$/,
                 exclude: /node_modules/,
-                use: [
-                    'babel-loader?cacheDirectory',
-                ],
+                loader: 'ts-loader',
+                options: {
+                    appendTsSuffixTo: [/\.vue$/],
+                }
+
             },
             {
                 // .js .jsx用babel解析

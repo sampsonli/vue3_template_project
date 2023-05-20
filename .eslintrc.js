@@ -13,7 +13,6 @@ module.exports = {
   ],
   parserOptions: {
     ecmaVersion: 2020,
-    parser: '@babel/eslint-parser',
   },
   parser: 'vue-eslint-parser',
   rules: {
