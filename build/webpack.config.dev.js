@@ -5,9 +5,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 module.exports = {
     mode: "development",
-    watchOptions: {
-        ignored: /node_modules/,
-    },
     devServer: {
         static: {
             directory: path.join(__dirname, '../public'),
@@ -38,6 +35,7 @@ module.exports = {
                 loader: 'ts-loader',
                 options: {
                     appendTsSuffixTo: [/\.vue$/],
+                    transpileOnly: true,
                 }
 
             },
