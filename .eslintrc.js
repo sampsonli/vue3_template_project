@@ -7,13 +7,22 @@ module.exports = {
     'vue/setup-compiler-macros': true,
   },
   extends: [
-    'plugin:vue/vue3-essential',
-    'plugin:vue/vue3-recommended',
     'eslint:recommended',
+    'plugin:vue/vue3-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
+    // eslint-config-prettier 的缩写
+    'prettier'
   ],
   parserOptions: {
-    ecmaVersion: 2020,
+    ecmaVersion: 12,
+    parser: '@typescript-eslint/parser',
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true
+    }
   },
+  plugins: ['vue', '@typescript-eslint', 'prettier'],
   parser: 'vue-eslint-parser',
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
