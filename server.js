@@ -17,14 +17,15 @@ const { PORT = 3000 } = process.env; // 服务启动端口号
 app.use(historyApiFallback());
 // 如果是生产环境，则运行build文件夹中的代码
 app.use(compression());
-app.use(express.static('dist', {
+/*app.use(express.static('dist', {
     maxAge: '1d',
     setHeaders(res, file) {
         if (file.indexOf('index.html') > -1) {
             res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=5');
         }
     },
-}));
+}));*/
+app.use(express.static('dist'));
 
 app.use((req, resp, next) => {
     if (req.originalUrl.indexOf('/user') > -1) {

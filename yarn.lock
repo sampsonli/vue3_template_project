@@ -2427,10 +2427,10 @@ ms@2.1.3, ms@^2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
   integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
 
-mtor-vue@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/mtor-vue/-/mtor-vue-1.0.0.tgz#8e7ea677d5cfbe60fa9b5f77d8b9100cd7765800"
-  integrity sha512-psoSMl4ruehDeMxoX0kt/XobPY3Qdt55mzBvnx33m7oJpuaGNCOGsEKFNfj1cOLKKJTRzKBRjndDephkmwsJrg==
+mtor-vue@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/mtor-vue/-/mtor-vue-1.0.2.tgz#43386e7e38cc49d6ba2881b46afe01671a2954ce"
+  integrity sha512-VJsXOKVRL+/6DaUPRy7dgXpmoAntaeWQRWacXqF+uYCLww+LMcu8E/xgwbZpNM8BLUPHxs2YaCq/Y9lMv5aCMA==
 
 multicast-dns@^7.2.5:
   version "7.2.5"
