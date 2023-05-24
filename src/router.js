@@ -8,7 +8,7 @@ const router = createRouter({
         },
         {
             path: '/demo',
-            component: () => import('~/views/Demo.vue'),
+            component: () => import(/* webpackChunkName: “demo” */'./views/Demo.vue'),
         },
     ]
 });

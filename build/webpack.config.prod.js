@@ -95,45 +95,6 @@ module.exports = {
             analyzerMode: process.env.ANALYSE ? 'server' : 'disabled',
         }),
     ],
-    optimization: {
-        runtimeChunk: true,
-        splitChunks: {
-            chunks: 'all', // Taken from https://gist.github.com/sokra/1522d586b8e5c0f5072d7565c2bee693
-            minSize: 0,
-            maxAsyncRequests: Infinity,
-            maxInitialRequests: Infinity,
-            cacheGroups: {
-                async: {
-                    chunks: 'async',
-                    minSize: 3000,
-                    minChunks: 2,
-                    maxAsyncRequests: 5,
-                    maxInitialRequests: 3,
-                    priority: -1,
-                    reuseExistingChunk: true,
-                },
-                commons: {
-                    name: 'commons',
-                    chunks: 'all', // 必须三选一： "initial" | "all" | "async"(默认就是异步)
-                    reuseExistingChunk: true,
-                    priority: 1,
-                    minChunks: 1,
-                    enforce: true,
-                    test: /[\\/]node_modules[\\/](@babel|core-js|css-loader|style-loader|webpack-hot-middleware|ansi-html|html-entities|querystring)/,
-                },
 
-                vendors: {
-                    name: 'vendors',
-                    chunks: 'initial', // 必须三选一： "initial" | "all" | "async"(默认就是异步)
-                    reuseExistingChunk: true,
-                    priority: 0,
-                    minChunks: 1,
-                    enforce: true,
-                    test: /[\\/]node_modules[\\/]/,
-                },
-
-            },
-        },
-    },
 
 }

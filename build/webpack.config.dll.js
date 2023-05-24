@@ -6,7 +6,11 @@ const dllPath = path.resolve(__dirname, '../public/dll');
 module.exports = {
     mode: 'production',
     entry: {
-        vendors: ['vue', 'dayjs', 'vue-router',
+        /**
+         * 不能包含vue 相关的库， 特别是包含组合api的库， 不然会引发莫名其妙的bug
+         */
+        vendors: [
+            'dayjs',
             'axios',
         ],
     },

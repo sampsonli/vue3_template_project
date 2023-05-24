@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack serve --config build/webpack.config.dev.js",
-    "build": "webpack --config build/webpack.config.prod.js",
+    "build": "rimraf dist && webpack --config build/webpack.config.prod.js",
     "build:dll": "rimraf public/dll/ && webpack --config build/webpack.config.dll.js && git add public/*",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint ./src",
