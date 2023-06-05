@@ -4,11 +4,11 @@ const router = createRouter({
     routes: [
         {
             path: '/',
-            redirect: '/demo'
+            redirect: '/home'
         },
         {
-            path: '/demo',
-            component: () => import(/* webpackChunkName: “demo” */'./views/Demo.vue'),
+            path: '/home',
+            component: () => import('./views/Home'),
         },
     ]
 });
