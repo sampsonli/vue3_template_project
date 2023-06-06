@@ -1,6 +1,6 @@
 <template>
   <div class="home-page">
-    num6={{model.num}}
+    num={{model.num}}
     <br/>
     <div class="btn" @click="model.addNum">button</div>
 
@@ -9,13 +9,13 @@
 </template>
 
 <script>
-import {useModel} from "mtor-vue";
+import {useInitModel} from "mtor-vue";
 import HomeModel from "~/views/Home/HomeModel";
 
 export default {
   name: "Home",
   setup() {
-    const model = useModel(HomeModel);
+    const model = useInitModel(HomeModel, ({init})=> init());
     return {model};
   }
 };
