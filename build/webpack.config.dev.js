@@ -6,9 +6,9 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 module.exports = {
     mode: "development",
     devServer: {
-        static: {
-            directory: path.join(__dirname, '../public'),
-        },
+        // static: {
+        //     directory: path.join(__dirname, '../public'),
+        // },
         compress: true,
         port: 9000,
     },

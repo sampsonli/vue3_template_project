@@ -2,23 +2,16 @@
   <div class="home-page">
     num={{model.num}}
     <br/>
-    <div class="btn" @click="model.addNum">button</div>
+    <div class="btn" @click="model.addNum">测试</div>
 
   </div>
 
 </template>
 
-<script>
+<script setup>
 import {useInitModel} from "mtor-vue";
 import HomeModel from "~/views/Home/HomeModel";
-
-export default {
-  name: "Home",
-  setup() {
-    const model = useInitModel(HomeModel, ({init})=> init());
-    return {model};
-  }
-};
+const model = useInitModel(HomeModel, ({init})=> init());
 </script>
 
 <style scoped lang="less" src="./style.less"></style>
