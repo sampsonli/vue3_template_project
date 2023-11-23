@@ -2,7 +2,7 @@
   <div class="home-page">
     num={{model.num}}
     <br/>
-    <div class="btn" @click="model.addNum">测试+1</div>
+    <div class="btn" @click="model.addNum">测试+{{model.n}}</div>
 
   </div>
 
