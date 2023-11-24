@@ -6,14 +6,17 @@ class HomeModel extends Model {
 
     text = '';
 
+    history = [];
+
     btnEnable = true;
 
 
     async ask() {
-        if(!this.btnEnable) return;
+        if(!this.btnEnable || !this.input) return;
         this.btnEnable = false;
         this.text = '';
-        const {data: questionId} = await api.doAsk({list: [{content: this.input}]});
+        this.history.push({content: this.input});
+        const {data: questionId} = await api.doAsk({list: this.history});
         console.log(questionId);
         const evtSource = new EventSource(`${baseUrl}/ai/answer?questionId=${questionId}`);
         evtSource.onmessage = (event) => {
@@ -23,6 +26,7 @@ class HomeModel extends Model {
         evtSource.onerror = () => {
             evtSource.close();
             this.btnEnable = true;
+            this.input = '';
         };
     }
 }
