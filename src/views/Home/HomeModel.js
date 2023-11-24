@@ -1,4 +1,5 @@
 import {define, Model} from "mtor-vue";
+import api, {baseUrl} from './api';
 @define(module)
 class HomeModel extends Model {
     input = '';
@@ -12,9 +13,10 @@ class HomeModel extends Model {
         if(!this.btnEnable) return;
         this.btnEnable = false;
         this.text = '';
-        const evtSource = new EventSource("http://47.116.42.80:8081/ai/info?ask=" + this.input);
+        const {data: questionId} = await api.doAsk({list: [{content: this.input}]});
+        console.log(questionId);
+        const evtSource = new EventSource(`${baseUrl}/ai/answer?questionId=${questionId}`);
         evtSource.onmessage = (event) => {
-            console.log(event.data);
             const data = event.data.replaceAll('<br/>', '\n');
             this.text += data;
         };
