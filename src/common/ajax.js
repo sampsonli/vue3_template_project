@@ -7,7 +7,7 @@ import axios from 'axios';
 const isDev = process.env.NODE_ENV === 'development';
 const options = {
   baseURL: '',
-  timeout: 20000,
+  timeout: 200000,
   withCredentials: false,
 };
 const _axios = axios.create(options);
@@ -33,6 +33,7 @@ _axios.interceptors.response.use((response) => {
 });
 export const get = function (url, config) {
   return _axios.get(url, config).then((response) => {
+    console.log(response);
     if (response && response.status === 200) {
       return response.data;
     }

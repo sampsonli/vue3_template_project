@@ -1,8 +1,15 @@
 <template>
   <div class="home-page">
-    num={{model.num}}
-    <br/>
-    <div class="btn" @click="model.addNum">测试+{{model.n}}</div>
+    <div class="head">
+      <input v-model="model.input" class="input" />
+    <div class="btn" :class="{disable: !model.btnEnable}" @click="model.ask">{{ model.btnEnable ? '发送' : '请稍后' }}</div>
+    </div>
+   
+    <VueShowdown
+      :markdown="model.text"
+      flavor="github"
+      :options="{ emoji: true }"
+    />
 
   </div>
 
