@@ -7,6 +7,12 @@ const vendorManifest = require('../public/dll/vendors-manifest');
 const bundleConfig = require('../public/dll/bundle-config');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer');
+
+
+const AutoImport = require('unplugin-auto-import/webpack').default;
+const Components = require('unplugin-vue-components/webpack').default;
+const { ElementPlusResolver } = require('unplugin-vue-components/resolvers');
+
 module.exports = {
     mode: "production",
     entry: {
@@ -48,7 +54,6 @@ module.exports = {
             {
                 // .less 解析
                 test: /\.(less|css)$/,
-                exclude: /(node_modules|assets)/,
                 use: [
                     MiniCssExtractPlugin.loader,
                     'css-loader',
@@ -58,7 +63,6 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/i,
-                // More information here https://webpack.js.org/guides/asset-modules/
                 type: 'asset',
             },
         ],
@@ -70,6 +74,12 @@ module.exports = {
         extensions: ['.js', '.vue', '.jsx', '.ts', '.json'],
     },
     plugins: [
+        AutoImport({
+            resolvers: [ElementPlusResolver()],
+        }),
+        Components({
+            resolvers: [ElementPlusResolver()],
+        }),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production'),
         }),

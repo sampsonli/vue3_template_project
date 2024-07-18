@@ -12,25 +12,10 @@ const options = {
 };
 const _axios = axios.create(options);
 
-const jumpLogin = () => {
-  sessionStorage.setItem('_back_url', window.location.href);
-  window.location.replace(`${window.location.href.split('?')[0]}/login`);
-};
 
-_axios.interceptors.request.use((config) => {
-  const token = sessionStorage.getItem('_token');
-  if (token) {
-    config.headers.token = token;
-  }
-  // config.headers.token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyTmFtZSI6IjAxMzg4MDA3IiwiZXhwIjoxNjIyMjY4NDYyLCJ1c2VySWQiOiI3OTcifQ.IFYQ2_N2of62ifQmnQDNuLzkqDEx8hxo_1XvRKPOoUM';
-  return config;
-});
-_axios.interceptors.response.use((response) => {
-  if (response.data.code === 10002) {
-    jumpLogin();
-  }
-  return response;
-});
+
+
+
 export const get = function (url, config) {
   return _axios.get(url, config).then((response) => {
     console.log(response);

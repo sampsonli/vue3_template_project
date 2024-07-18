@@ -3,6 +3,10 @@ const webpack = require('webpack');
 const {VueLoaderPlugin} = require('vue-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+
+const AutoImport = require('unplugin-auto-import/webpack').default;
+const Components = require('unplugin-vue-components/webpack').default;
+const { ElementPlusResolver } = require('unplugin-vue-components/resolvers');
 module.exports = {
     mode: "development",
     devServer: {
@@ -59,7 +63,6 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/i,
-                // More information here https://webpack.js.org/guides/asset-modules/
                 type: 'asset',
             },
         ],
@@ -71,6 +74,12 @@ module.exports = {
         extensions: ['.js', '.vue', '.jsx', '.ts', '.json'],
     },
     plugins: [
+        AutoImport({
+            resolvers: [ElementPlusResolver()],
+        }),
+        Components({
+            resolvers: [ElementPlusResolver()],
+        }),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('development'),
         }),

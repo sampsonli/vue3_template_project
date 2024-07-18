@@ -25,3 +25,5 @@ yarn-error.log*
 ddns-config.js
 password.md
 app.tar.gz
+auto-imports.d.ts
+components.d.ts
