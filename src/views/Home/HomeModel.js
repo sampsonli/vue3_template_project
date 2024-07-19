@@ -9,9 +9,16 @@ class HomeModel extends Model {
     history = [];
 
     btnEnable = true;
+    date;
 
 
     async ask() {
+        console.log(this.date);
+
+
+
+
+        return;
         if(!this.btnEnable || !this.input) return;
         this.btnEnable = false;
         this.text = '';

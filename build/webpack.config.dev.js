@@ -82,6 +82,8 @@ module.exports = {
         }),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('development'),
+            '__VUE_OPTIONS_API__': true,
+            '__VUE_PROD_DEVTOOLS__': false,
         }),
         new VueLoaderPlugin(),
         new CopyWebpackPlugin({patterns: [{from: path.resolve(__dirname, '../public')}]}),
