@@ -3,9 +3,8 @@ import {define, Model} from 'mtor-vue';
 class HomeModel extends Model {
     count = 0;
 
-
     add() {
-        this.count++;
+        this.count+=1;
     }
 }
 export default HomeModel;

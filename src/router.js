@@ -1,12 +1,11 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 
-
-
 const routes = [
     {
         path: '/',
         redirect: '/home'
     },
+    // todo 添加自己的路由
    /* {
         path: '/home',
         component: () => import('./views/Home'),
@@ -24,10 +23,6 @@ const routes = [
             routes.push(md);
         });
 })(require.context('./views/', true, /\.\/[^/]+\/_index\.js$/));
-
-
-
-
 const router = createRouter({
     history: createWebHashHistory(),
     routes,
