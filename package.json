@@ -8,27 +8,27 @@
     "build": "rsbuild build",
     "preview": "rsbuild preview",
     "lint": "eslint ./src",
-    "deploy": "node deploy.js"
+    "deploy": "node deploy.mjs"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.6.2",
-    "dayjs": "^1.11.10",
+    "axios": "^1.7.8",
+    "dayjs": "^1.11.13",
     "element-plus": "^2.7.7",
     "mtor-vue": "^1.0.5",
-    "vue": "^3.3.8",
-    "vue-router": "^4.2.5"
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.12.0",
-    "@rsbuild/core": "^1.1.4",
+    "@eslint/js": "^9.16.0",
+    "@rsbuild/core": "^1.1.7",
     "@rsbuild/plugin-less": "^1.1.0",
     "@rsbuild/plugin-vue": "^1.0.5",
     "@vue/eslint-config-typescript": "^14.0.0",
-    "eslint": "^9.12.0",
-    "eslint-plugin-vue": "^9.28.0",
-    "globals": "^15.10.0",
+    "eslint": "^9.16.0",
+    "eslint-plugin-vue": "^9.32.0",
+    "globals": "^15.13.0",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.16.0"
   }

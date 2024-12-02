@@ -5,7 +5,10 @@ import { pluginLess } from '@rsbuild/plugin-less';
 
 export default defineConfig({
   plugins: [pluginVue(), pluginLess()],
+  output: {
+    cleanDistPath: process.env.NODE_ENV === 'production',
+  },
   html: {
-    template: './src/index.ejs',
+    template: './src/index.html',
   }
 });
