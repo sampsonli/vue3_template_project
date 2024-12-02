@@ -13,9 +13,14 @@ export default [
   {files: ["**/*.vue"], languageOptions: {parserOptions: {parser: tseslint.parser}}},
   {
     rules: {
-      "no-console": 'off',
-      'semi': "error",
+      'no-console': 'off',
+      'no-magic-numbers': 'off',
+      'quotes': ['error', 'single'],
+      'semi': 'error',
+      'sort-imports': 'off',
+      'eqeqeq': 'error',
       'vue/multi-word-component-names': 0,
+
     },
   },
 ];
