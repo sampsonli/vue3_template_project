@@ -8,7 +8,10 @@
     "build": "rsbuild build",
     "preview": "rsbuild preview",
     "lint": "eslint ./src",
-    "deploy": "node deploy.mjs"
+    "deploy": "node deploy.mjs",
+    "tauri:dev": "tauri dev",
+    "tauri:build": "tauri build",
+    "tauri": "tauri"
   },
   "author": "",
   "license": "ISC",
@@ -18,7 +21,8 @@
     "element-plus": "^2.7.7",
     "mtor-vue": "^1.0.5",
     "vue": "^3.5.13",
-    "vue-router": "^4.5.0"
+    "vue-router": "^4.5.0",
+    "@tauri-apps/api": "^2"
   },
   "devDependencies": {
     "@eslint/js": "^9.16.0",
@@ -30,6 +34,8 @@
     "eslint-plugin-vue": "^9.32.0",
     "globals": "^15.13.0",
     "typescript": "^5.7.2",
-    "typescript-eslint": "^8.16.0"
+    "typescript-eslint": "^8.16.0",
+    "@tauri-apps/cli": "^2"
+
   }
 }
