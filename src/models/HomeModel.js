@@ -3,7 +3,6 @@ import {window} from '@tauri-apps/api';
 @define(module)
 class HomeModel extends Model {
     count = 0;
-
     add() {
         this.count+=1;
     }

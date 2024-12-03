@@ -19,7 +19,7 @@
     "axios": "^1.7.8",
     "dayjs": "^1.11.13",
     "element-plus": "^2.7.7",
-    "mtor-vue": "^1.0.5",
+    "mtor-vue": "^1.0.6",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0",
     "@tauri-apps/api": "^2"

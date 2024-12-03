@@ -13,6 +13,13 @@
 import {useInitModel} from 'mtor-vue';
 import HomeModel from '~/models/HomeModel';
 const model = useInitModel(HomeModel);
+
+
+
+
+
+
+
 console.log('hello');
 </script>
 
