@@ -1,19 +1,20 @@
 <template>
     <el-container class="home-page">
-      <el-header :style="{background: model.color}">Header</el-header>
+      <el-header @click="model.fullscreen()" :style="{background: model.color}">Header</el-header>
       <el-main>
-        <el-color-picker v-model="model.color" />
+        <Echart :options="model.option"/>
       </el-main>
-      <el-footer :style="{background: model.color}">Footer</el-footer>
+      <el-footer :style="{background: model.color}" @click="model.ask()">Footer</el-footer>
     </el-container>
 </template>
 
 <script setup>
 
-import {ElHeader, ElContainer, ElMain, ElFooter, ElColorPicker} from 'element-plus';
+import {ElHeader, ElContainer, ElMain, ElFooter, ElColorPicker, ElButton} from 'element-plus';
 import {useInitModel} from 'mtor-vue';
 import HomeModel from '~/models/HomeModel';
-const model = useInitModel(HomeModel);
+import Echart from '~/components/Echart';
+const model = useInitModel(HomeModel, ({init}) => init());
 
 
 </script>

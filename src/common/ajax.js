@@ -18,7 +18,6 @@ const _axios = axios.create(options);
 
 export const get = function (url, config) {
   return _axios.get(url, config).then((response) => {
-    console.log(response);
     if (response && response.status === 200) {
       return response.data;
     }
