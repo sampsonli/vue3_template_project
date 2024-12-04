@@ -3,6 +3,7 @@ import {window} from '@tauri-apps/api';
 import { ask } from '@tauri-apps/plugin-dialog';
 @define(module)
 class HomeModel extends Model {
+    color = '';
     count = 0;
     async add() {
         this.count+=1;

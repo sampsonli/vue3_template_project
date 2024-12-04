@@ -15,6 +15,7 @@
         "title": "瓦特曼智能",
         "width": 1000,
         "height": 600,
+        "decorations": true,
         "resizable": true,
         "fullscreen": false
       }

@@ -1,26 +1,21 @@
 <template>
-  <div class="home-page">
-
-    <div class="val">
-      <div class="btn" @click="model.fullscreen()">全屏</div>
-      <div class="count" @click="model.add()">{{model.count}}</div>
-    </div>
-  </div>
-
+    <el-container class="home-page">
+      <el-header :style="{background: model.color}">Header</el-header>
+      <el-main>
+        <el-color-picker v-model="model.color" />
+      </el-main>
+      <el-footer :style="{background: model.color}">Footer</el-footer>
+    </el-container>
 </template>
 
 <script setup>
+
+import {ElHeader, ElContainer, ElMain, ElFooter, ElColorPicker} from 'element-plus';
 import {useInitModel} from 'mtor-vue';
 import HomeModel from '~/models/HomeModel';
 const model = useInitModel(HomeModel);
 
 
-
-
-
-
-
-console.log('hello');
 </script>
 
 <style scoped lang="less" src="./style.less"></style>
