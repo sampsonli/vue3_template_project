@@ -6,10 +6,16 @@ import api from '~/models/api';
 import dayjs from "dayjs";
 @define(module)
 class HomeModel extends Model {
+    tabs = ['first', 'second', 'third'];
     color = 'red';
     count = 0;
     answer = '';
     option;
+
+    tabIndex = 0;
+    changeTab(tab) {
+        console.log(tab);
+    }
     async add() {
         this.count+=1;
     }
@@ -38,12 +44,8 @@ class HomeModel extends Model {
 
         try {
             const { data } = await api.getMainData({ tableid: 1, fieldid: 2, page: 1, pagesize: 10000000, starttime, endtime });
-
             const { times, values, result } = processData(data.items, data.start_time, 5);
-            console.log(result);
             this.genChartOption(times, values, result);
-            console.log(this.option);
-
         } catch(e) {
             console.error(e.message);
         }

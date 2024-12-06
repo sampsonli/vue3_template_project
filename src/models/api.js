@@ -9,8 +9,8 @@ const Apis = {
     getMainData: {
         method: 'get',
         url: `${baseUrl}/api/v1/emotor/query`,
-        mockUrl: 'http://192.168.20.12:8082/api/v1/emotor/query',
-        isMock: false,
+        mockUrl: 'query.json',
+        isMock: true,
     },
 };
 export default generator(Apis);

@@ -12,6 +12,7 @@ const eleRef = ref();
 import {loadjs} from '~/common/utils';
  
 const props = defineProps(['options']);
+let resize;
 onMounted(() => {
   loadjs('echarts.min.js', 'echarts').then(echarts => {
     const instance = echarts.init(eleRef.value);
@@ -23,13 +24,14 @@ onMounted(() => {
       }
 
     });
-    const resize = () => instance.resize();
+    resize = () => instance.resize();
     window.addEventListener('resize', resize);
-    onBeforeUnmount(() => {
-      window.removeEventListener('resize', resize);
-    });
+
 
   });
+});
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', resize);
 });
 
 </script>

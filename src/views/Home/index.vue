@@ -1,20 +1,34 @@
 <template>
     <el-container class="home-page">
-      <el-header @click="model.fullscreen()" :style="{background: model.color}">Header</el-header>
       <el-main>
-        <Echart :options="model.option"/>
+        <el-tabs v-model="model.tabIndex" @tab-click="model.changeTab($event.props.name)">
+          <el-tab-pane label="流量" :name="0" :lazy="true">
+            <div class="chart">
+              <Echart :options="model.option"/>
+            </div>
+          </el-tab-pane>
+          <el-tab-pane label="温度" :name="1" :lazy="true">
+            <div class="chart">
+              <Echart :options="model.option"/>
+            </div>
+          </el-tab-pane>
+          <el-tab-pane label="压力" :name="2" :lazy="true">Role</el-tab-pane>
+        </el-tabs>
       </el-main>
-      <el-footer :style="{background: model.color}" @click="model.ask()">Footer</el-footer>
     </el-container>
 </template>
 
 <script setup>
 
-import {ElHeader, ElContainer, ElMain, ElFooter, ElColorPicker, ElButton} from 'element-plus';
+import {ElContainer, ElMain, ElTabs, ElTabPane} from 'element-plus';
 import {useInitModel} from 'mtor-vue';
 import HomeModel from '~/models/HomeModel';
 import Echart from '~/components/Echart';
+import {ref} from "vue";
 const model = useInitModel(HomeModel, ({init}) => init());
+
+const activeName = ref('first');
+
 
 
 </script>
