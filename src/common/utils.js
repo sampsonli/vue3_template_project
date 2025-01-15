@@ -109,7 +109,7 @@ export const initWebSocket = ({url, onData, onOpen = undefined, type = 'text', t
                     createWebsocket();
                 };
             }, timeout);
-            if (type === "text") {
+            if (type === 'text') {
                 const data = JSON.parse(event.data);
                 if (data.msg !== 'pong') {
                     onData(data);
@@ -122,13 +122,13 @@ export const initWebSocket = ({url, onData, onOpen = undefined, type = 'text', t
         let timeId;
         ws.onopen = () => {
             ws.send(JSON.stringify({
-                "msg": 'ping',
-                "msg_type": 'ping'
+                'msg': 'ping',
+                'msg_type': 'ping'
             }));
             onOpen && onOpen(ws);
             timeId = setInterval(() => {
                 try {
-                    ws.send(JSON.stringify({"msg": "ping", "msg_type": 'ping'}));
+                    ws.send(JSON.stringify({'msg': 'ping', 'msg_type': 'ping'}));
                 } catch (ignore) {
                     // console.log('');
                 }

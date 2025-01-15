@@ -21,21 +21,21 @@
     "axios": "^1.7.8",
     "dayjs": "^1.11.13",
     "element-plus": "^2.7.7",
-    "mtor-vue": "^1.0.6",
+    "mtor-vue": "^1.0.8",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.16.0",
-    "@rsbuild/core": "^1.1.7",
+    "@eslint/js": "^9.18.0",
+    "@rsbuild/core": "^1.1.13",
     "@rsbuild/plugin-less": "^1.1.0",
     "@rsbuild/plugin-vue": "^1.0.5",
-    "@tauri-apps/cli": "^2",
-    "@vue/eslint-config-typescript": "^14.0.0",
-    "eslint": "^9.16.0",
+    "@tauri-apps/cli": "^2.2.4",
+    "@vue/eslint-config-typescript": "^14.3.0",
+    "eslint": "^9.18.0",
     "eslint-plugin-vue": "^9.32.0",
-    "globals": "^15.13.0",
-    "typescript": "^5.7.2",
-    "typescript-eslint": "^8.16.0"
+    "globals": "^15.14.0",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.20.0"
   }
 }
