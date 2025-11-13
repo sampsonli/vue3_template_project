@@ -1,8 +1,11 @@
 <template>
 
   <div class="container">
-    hello demo-{{model.num}}
-    <div class="btn" @click="model.add">测试wasm+webwork</div>
+    hello demo-{{model.num}}<br/>
+    spend:{{model.spend}}ms
+    <div class="btn" @click="model.simple_async()">测试异步</div>
+    <div class="btn" @click="model.test_wasm_performance()">测试wasm性能</div>
+    <div class="btn" @click="model.test_local_performance()">测试local性能</div>
   </div>
 
 

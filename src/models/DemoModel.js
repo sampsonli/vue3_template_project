@@ -1,20 +1,43 @@
 import {define, Model} from 'mtor-vue';
 import * as Comlink from 'comlink';
+import {wait} from '~/common/utils';
 
 @define(module)
 class DemoModel extends Model {
     loaded = false;
     /**
-     * @type {Comlink.Remote<{heavyCalculation: (number)=>Promise<string>}>}
+     * @type {Comlink.Remote<{
+     *          simple_async: (number)=>Promise<string>,
+     *          test_performance: (number)=>Promise<{value, spend}>,
+     *          test_local_performance: (number)=>Promise<{value, spend}>,
+     *     }>}
      */
     static work_proxy;
 
+
+    test_value = 1000000000;
+
     num = 10;
 
-    async add() {
+    spend = 0;
+
+    async simple_async() {
         this.num++;
-        let ret = await DemoModel.work_proxy.heavyCalculation(1000);
-        console.log(`computed:${ret}`);
+        let ret = await DemoModel.work_proxy.simple_async(1000);
+        this.num++;
+        console.log(`simple_async:${ret}`);
+    }
+
+    async test_wasm_performance() {
+        let ret = await DemoModel.work_proxy.test_performance(this.test_value);
+        this.spend = ret.spend;
+        console.log(`test_wasm_performance:${ret.value}`);
+    }
+
+    async test_local_performance() {
+        let ret = await DemoModel.work_proxy.test_local_performance(this.test_value);
+        this.spend = ret.spend;
+        console.log(`test_local_performance:${ret.value}`);
     }
 
     init() {
