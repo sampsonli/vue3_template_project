@@ -15,7 +15,7 @@ class DemoModel extends Model {
     static work_proxy;
 
 
-    test_value = 1000000000;
+    test_value = 100000000;
 
     num = 10;
 
@@ -29,12 +29,14 @@ class DemoModel extends Model {
     }
 
     async test_wasm_performance() {
+        this.spend = 0;
         let ret = await DemoModel.work_proxy.test_performance(this.test_value);
         this.spend = ret.spend;
         console.log(`test_wasm_performance:${ret.value}`);
     }
 
     async test_local_performance() {
+        this.spend = 0;
         let ret = await DemoModel.work_proxy.test_local_performance(this.test_value);
         this.spend = ret.spend;
         console.log(`test_local_performance:${ret.value}`);

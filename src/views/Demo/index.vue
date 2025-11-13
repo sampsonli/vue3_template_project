@@ -2,8 +2,8 @@
 
   <div class="container">
     hello demo-{{model.num}}<br/>
-    spend:{{model.spend}}ms
-    <div class="btn" @click="model.simple_async()">测试异步</div>
+    spend:{{model.spend || '--'}}ms
+    <div class="btn" @click="model.simple_async()">测试wasm异步1s</div>
     <div class="btn" @click="model.test_wasm_performance()">测试wasm性能</div>
     <div class="btn" @click="model.test_local_performance()">测试local性能</div>
   </div>
