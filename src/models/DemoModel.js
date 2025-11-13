@@ -15,7 +15,7 @@ class DemoModel extends Model {
     static work_proxy;
 
 
-    test_value = 100000000;
+    test_value = 1000000000;
 
     num = 10;
 

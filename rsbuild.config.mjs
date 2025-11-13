@@ -10,5 +10,8 @@ export default defineConfig({
   },
   html: {
     template: './src/index.html',
+  },
+  server: {
+    port: process.env.PORT || 3001,
   }
 });
